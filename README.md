@@ -7,12 +7,7 @@ Things you may want to cover:
 
 Ruby version
 -----------------
-
-System dependencies
------------------
-
-Configuration
------------------
+    ruby '2.4.2'
 
 Database creation
 -----------------
