@@ -27,6 +27,4 @@ Things you may want to cover:
     rake db:schema:load
     rake db:seed 
     bundle exec rails s -p 3000
- 
 
-* ...
