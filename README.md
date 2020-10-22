@@ -20,12 +20,13 @@ Things you may want to cover:
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
- 
- ###### bundle install
- ###### rake db:create 
- ###### rake db:schema:load
- ###### rake db:seed 
- ###### bundle exec rails s -p 3000
+-----------------
 
+    bundle install
+    rake db:create 
+    rake db:schema:load
+    rake db:seed 
+    bundle exec rails s -p 3000
+ 
 
 * ...
