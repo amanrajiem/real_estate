@@ -1,0 +1,7 @@
+:concurrency: 20
+:pidfile: tmp/sidekiq.pid
+:queues:
+  - emailer_queue
+  - very_long_task
+
+

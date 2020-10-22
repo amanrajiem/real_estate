@@ -1,0 +1,43 @@
+<section class="container">
+
+
+<div class="row">
+    <div class="col-md-6 form_border">
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Owner:</strong>
+  <%= @commecial_unit.owner %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @commecial_unit.address %>
+</p>
+
+<p>
+  <strong>Shops:</strong>
+  <%= @commecial_unit.shops %>
+</p>
+
+<p>
+  <strong>Sqmt:</strong>
+  <%= @commecial_unit.sqmt %>
+</p>
+
+<p>
+  <strong>Parking:</strong>
+  <%= @commecial_unit.parking %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @commecial_unit.price %>
+</p>
+
+<%= link_to 'Edit', edit_commecial_unit_path(@commecial_unit) %> |
+<%= link_to 'Back', commecial_units_path %>
+        </div>
+    </div>
+</section>
+

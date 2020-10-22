@@ -1,0 +1,66 @@
+<!-- Main content -->
+<section class="content">
+
+ <div id = "message" style="text-align: center"></div>
+
+ <div class="container">
+
+  <h1>Assets</h1>
+
+  <table class="table table-bordered text-center">
+    <thead>
+      <tr>
+        <th >Asset Type</th>
+        <th >Owner</th>
+        <th >Address</th>
+        <th >Sqmt</th>
+        <th >Additional Info</th>
+        <th >Picture</th>
+        <th >Price</th>
+        <th> Detail </th>
+        <th >Buy</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @assets.each do |asset|%>
+      <tr>
+        <td ><%= asset.class.name %></td>
+        <td ><%= asset.owner %></td>
+        <td ><%= asset.address%></td>
+        <td ><%= asset.sqmt %></td>
+        <% if asset.class.name == "House" %>
+        <td > Rooms - <%= asset.rooms %> | Floor - <%= asset.floors %> | Air Cond - <%= asset.air_cond %> </td>
+        <% end %>
+        <% if asset.class.name == "ComplexBuilding" %>
+        <td >Units - <%= asset.units %></td>
+        <% end %>
+        <% if asset.class.name == "CommecialUnit" %>
+        <td >Shops - <%= asset.shops %> | Parking - <%= asset.parking %> </td>
+        <% end %>
+        <td ><%=image_tag asset.picture.url, size: "50x50" %></td>
+        <td ><%= asset.price %></td>
+        <td><%= link_to 'Show', asset, target: '_blank' %></td>
+        <td ><a onclick="call_buy_asset('<%=asset.class.name%>', <%= asset.id%>)" class="btn btn-primary">Buy</a></td>
+      </tr>
+      <% end%>
+    </tbody>
+  </table>
+</div>
+
+</section>
+<script>
+  function call_buy_asset(asset_type,asset_id) {
+    $.ajax({
+      method: "POST",
+      data: {
+        asset_type: asset_type,
+        asset_id: asset_id
+      },
+      url: "/buy",
+      success: function(data) {
+        $("#message").html(data.message);
+        $("#message").css('color','#007bff');
+      }
+    });
+  }
+</script>
